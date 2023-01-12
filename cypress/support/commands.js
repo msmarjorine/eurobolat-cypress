@@ -27,3 +27,13 @@ Cypress.Commands.add('hover', element => {
     cy.get(element).trigger('mouseover')
 
 })
+Cypress.Commands.add('verifyGlobalElements', () => {
+    cy.get('#eheader').should('exist')
+    cy.get('#efooter').should('exist')
+    cy.get('div.wrapper').should('exist')
+    cy.get('#main-title').should('be.visible')
+        .and('have.css', 'fontSize', '50px')
+    cy.get('#ukr').should('be.visible')
+        .and('have.attr', 'src', 'pictures/Ukraine.png')
+    cy.hover('#ukr').should('have.class', 'brighten')
+})
