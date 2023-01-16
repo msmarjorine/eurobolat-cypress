@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'qowcgr',
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -12,6 +13,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 20000,
     watchForFileChanges: false,
-    chromeWebSecurity: false
+    chromeWebSecurity: false,
+    videoUploadOnPasses: false
   },
 });
