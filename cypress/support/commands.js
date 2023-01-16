@@ -45,3 +45,20 @@ Cypress.Commands.add('verifyMenu', () => {
     cy.get('#emenu > li > a').eq(4).should('contain', 'тест').and('have.attr', 'href', 'calendar.html')
     cy.get('#emenu > li > a').eq(5).should('contain', 'музло').and('have.attr', 'href', 'music.html')
 })
+Cypress.Commands.add('verifyNaverh', () => {
+    cy.get('#naverh').should('not.be.visible')
+    cy.get('#efooter').scrollIntoView().then(() => {
+        cy.get('#naverh').should('be.visible')
+        cy.get('#naverh').click()
+        cy.get('#eheader').should('be.visible')
+        cy.get('#naverh').should('not.be.visible')
+    })
+})
+Cypress.Commands.add('verifyCountries', () => {
+    cy.get('#countries').should('have.css', 'justifyContent', 'space-around')
+    cy.get('#countries > li > a').as('countryLinks')
+    cy.get('@countryLinks').its('length').should('eq', 12)
+    cy.get('@countryLinks').each(($el, index, list) => {
+        expect($el.attr('href')).to.contain('instagram.com')
+    })
+})

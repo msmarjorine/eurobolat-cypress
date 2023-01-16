@@ -36,11 +36,11 @@ describe('Check the homepage', () => {
             expect(request.headers).to.have.property('referer', 'https://music.yandex.by/iframe/')
         })
 
-        //doesn't work as in a studying example:
-        // cy.get('iframe[src*="music.yandex.by/iframe/"]').then($iframe => {
-        //     const body = $iframe.contents().find('body')
-        //     cy.wrap(body).as('yandexBody')
-        // })
+        /*doesn't work as in a studying example:
+        cy.get('iframe[src*="music.yandex.by/iframe/"]').then($iframe => {
+            const body = $iframe.contents().find('body')
+            cy.wrap(body).as('yandexBody')
+        })*/
         cy.get('iframe[src*="music.yandex.by/iframe/"]').as('yandexFrame')
         cy.get('@yandexFrame').should('be.visible')
     })
