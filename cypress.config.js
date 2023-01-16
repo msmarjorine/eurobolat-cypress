@@ -10,6 +10,7 @@ module.exports = defineConfig({
     viewportWidth: 1366,
     viewportHeight: 768,
     pageLoadTimeout: 120000,
-    watchForFileChanges: false
+    watchForFileChanges: false,
+    chromeWebSecurity: false
   },
 });

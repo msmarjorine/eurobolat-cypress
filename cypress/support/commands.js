@@ -37,3 +37,11 @@ Cypress.Commands.add('verifyGlobalElements', () => {
         .and('have.attr', 'src', 'pictures/Ukraine.png')
     cy.hover('#ukr').should('have.class', 'brighten')
 })
+Cypress.Commands.add('verifyMenu', () => {
+    cy.get('#emenu > li > a').eq(0).should('contain', 'история').and('have.attr', 'href', 'history.html')
+    cy.get('#emenu > li > a').eq(1).should('contain', 'трипы').and('have.attr', 'href', 'eurotrips.html')
+    cy.get('#emenu > li > a').eq(2).should('contain', 'мзгб').and('have.attr', 'href', 'mozgoboyna.html')
+    cy.get('#emenu > li > a').eq(3).should('contain', 'новости').and('have.attr', 'href', 'news.html')
+    cy.get('#emenu > li > a').eq(4).should('contain', 'тест').and('have.attr', 'href', 'calendar.html')
+    cy.get('#emenu > li > a').eq(5).should('contain', 'музло').and('have.attr', 'href', 'music.html')
+})
