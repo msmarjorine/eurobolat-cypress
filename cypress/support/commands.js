@@ -62,3 +62,11 @@ Cypress.Commands.add('verifyCountries', () => {
         expect($el.attr('href')).to.contain('instagram.com')
     })
 })
+Cypress.Commands.add('verifyNews', () => {
+    cy.get('.news-item').as('newsItems')
+    cy.get('@newsItems').its('length').should('be.at.least', 13)
+    cy.get('@newsItems').first().should('have.css', 'backgroundColor', 'rgb(185, 217, 201)')
+    cy.get('@newsItems').first().find('.news-text').find('.time-date')
+        .should('have.css', 'fontStyle', 'italic')
+
+})
