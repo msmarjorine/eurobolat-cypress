@@ -22,6 +22,7 @@
 //
 //
 // -- This will overwrite an existing command --
+
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('hover', element => {
     cy.get(element).trigger('mouseover')
@@ -75,4 +76,14 @@ Cypress.Commands.add('verifyClips', () => {
     cy.get('@clipsItems').its('length').should('be.at.least', 18)
     cy.get('@clipsItems').first().should('have.css', 'flexBasis', '45%')
     cy.get('.youTubeCaption').first().should('be.visible')
+})
+Cypress.Commands.add('verifyForm', (name, year) => {
+    cy.get('#username').should('have.attr', 'placeholder', 'Твоё имя')
+    cy.get('#birthyear').should('have.attr', 'placeholder', 'Год рождения')
+    cy.get('#username').type(name)
+    cy.get('#birthyear').type(year)
+    cy.get('#username').should('have.value', name)
+    cy.get('#birthyear').should('have.value', year)
+    cy.get('#submitCal').click()
+
 })
