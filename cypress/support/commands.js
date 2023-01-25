@@ -70,3 +70,9 @@ Cypress.Commands.add('verifyNews', () => {
         .should('have.css', 'fontStyle', 'italic')
 
 })
+Cypress.Commands.add('verifyClips', () => {
+    cy.get('.youTubeVideo').as('clipsItems')
+    cy.get('@clipsItems').its('length').should('be.at.least', 18)
+    cy.get('@clipsItems').first().should('have.css', 'flexBasis', '45%')
+    cy.get('.youTubeCaption').first().should('be.visible')
+})
