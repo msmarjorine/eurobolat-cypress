@@ -20,20 +20,16 @@ describe('Check the mzgb page', () => {
             cy.wait(3000)
         })
     })
-    it('The rating section should work', () => {
+    it('The rating and telegram sections should be displayed', () => {
         cy.visit('/mozgoboyna.html')
         cy.get('#mzgbbrst').should('have.css', 'backgroundColor', 'rgb(74, 0, 69)')
         cy.get('#mzgbbttn').parent().should('have.attr', 'href')
-        .and('contain', 'mzgb.net/results')
-
-    })
-    it('The telegram section should work', () => {
-        cy.visit('/mozgoboyna.html')
+            .and('contain', 'mzgb.net/results')
         cy.get('#telega').should('have.css', 'textAlign', 'center')
         cy.get('#tgic').should('have.attr', 'src')
-        .and('contain', 'icons8-telegram-app-64.png')
+            .and('contain', 'icons8-telegram-app-64.png')
         cy.get('#tgic').parent().should('have.attr', 'href')
-        .and('contain', 'addstickers/eurobolat')
+            .and('contain', 'addstickers/eurobolat')
     })
 
 })
