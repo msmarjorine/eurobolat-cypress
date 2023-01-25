@@ -4,7 +4,7 @@
   "description": "testing eurobolat via Cypress",
   "main": "index.js",
   "scripts": {
-    "triggerAllTests-cloud": "npx cypress run --record --key 512174f5-b09c-4136-a2c8-dfb8fa5e5f35"
+    "triggerAllTests-cloud": "npx cypress run -b chrome --record --key 512174f5-b09c-4136-a2c8-dfb8fa5e5f35"
   },
   "repository": {
     "type": "git",

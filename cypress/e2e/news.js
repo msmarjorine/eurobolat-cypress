@@ -1,7 +1,7 @@
 /// <reference types = "cypress"/>
 
 describe('Check the news page', () => {
-    it.skip('The page should load successfully', () => {
+    it('The page should load successfully', () => {
         cy.visit('/')
         cy.get('#emenu > li > a').contains('новости').click()
         cy.title().should('eq', 'новости')
