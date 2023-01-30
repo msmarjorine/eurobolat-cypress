@@ -14,7 +14,8 @@
     "eurobolat",
     "javaScript",
     "cypress",
-    "mocha"
+    "mocha",
+    "autotests"
   ],
   "author": "Golubeva",
   "license": "ISC",
