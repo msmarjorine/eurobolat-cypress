@@ -25,7 +25,7 @@ describe("Check the history page", () => {
             expect(request.headers).to.have.property('referer', 'https://www.instagram.com/')
         })*/
   });
-  it.only("The Disqus iframe should load successfully", () => {
+  it("The Disqus iframe should load successfully", () => {
     const testComment = "Checking the ability to write comments";
     cy.intercept({
       method: "GET",
