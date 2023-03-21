@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/msmarjorine/eurobolat-cypress#readme",
   "devDependencies": {
-    "cypress": "^12.3.0"
+    "cypress": "^12.3.0",
+    "x2js": "^3.4.4"
   }
 }
