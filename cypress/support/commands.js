@@ -34,10 +34,10 @@ Cypress.Commands.add("verifyGlobalElements", () => {
   cy.get("#main-title")
     .should("be.visible")
     .and("have.css", "fontSize", "50px");
-  cy.get("#ukr")
+  cy.get("#logo")
     .should("be.visible")
-    .and("have.attr", "src", "pictures/Ukraine.png");
-  cy.hover("#ukr").should("have.class", "brighten");
+    .and("have.attr", "src", "pictures/logo360.png");
+  cy.hover("#logo").should("have.class", "brighten");
 });
 Cypress.Commands.add("verifyMenu", () => {
   cy.get("#emenu > li > a")
@@ -80,8 +80,8 @@ Cypress.Commands.add("verifyCountries", () => {
   cy.get("#countries").should("have.css", "justifyContent", "space-around");
   cy.get("#countries > li > a").as("countryLinks");
   cy.get("@countryLinks").its("length").should("eq", 12);
-  cy.get("@countryLinks").each(($el, index, list) => {
-    expect($el.attr("href")).to.contain("instagram.com");
+  cy.get("@countryLinks").each((el) => {
+    expect(el.attr("href")).to.contain("instagram.com");
   });
 });
 Cypress.Commands.add("verifyNews", () => {
