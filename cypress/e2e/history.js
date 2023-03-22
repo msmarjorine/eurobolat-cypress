@@ -40,7 +40,7 @@ describe("Check the history page", () => {
       expect(response.body.response.id).to.eq("eurobolat");
       expect(response.body.response.category).to.eq("Entertainment");
     });
-    //
+    cy.wait(3000);
     cy.get("iframe[id^='dsq-app']").then((disqus) => {
       const body = disqus.contents().find("body");
       cy.wrap(body).as("disqusFrame");
