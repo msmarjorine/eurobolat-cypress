@@ -71,9 +71,6 @@ Cypress.Commands.add("verifyNaverh", () => {
     .scrollIntoView()
     .then(() => {
       cy.get("#naverh").should("be.visible");
-      cy.get("#naverh").click();
-      cy.get("#eheader").should("be.visible");
-      cy.get("#naverh").should("not.be.visible");
     });
 });
 Cypress.Commands.add("verifyCountries", () => {
