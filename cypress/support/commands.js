@@ -108,3 +108,13 @@ Cypress.Commands.add("verifyForm", (name, year) => {
   cy.get("#birthyear").should("have.value", year);
   cy.get("#submitCal").click();
 });
+Cypress.Commands.add("checkInstaFrame", () => {
+  cy.wait("@instaFrame", { timeout: 20000 }).then(({ request, response }) => {
+    expect(response.statusCode).to.eq(200);
+    expect(request.headers).to.have.property(
+      "referer",
+      "https://www.instagram.com/"
+    );
+    expect(response.headers).to.have.property("content-type", "image/jpeg");
+  });
+});

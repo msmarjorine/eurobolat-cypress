@@ -17,13 +17,8 @@ describe("Check the history page", () => {
       resourceType: "image",
     }).as("instaFrame");
     cy.visit("/history.html");
-
+    cy.checkInstaFrame();
     cy.get("#instagram-embed-0").should("exist");
-    //this is a flaky test, so it's better to omit it
-    /*cy.wait('@instaFrame', { timeout: 20000 }).then(({ request, response }) => {
-            expect(response.statusCode).to.eq(200)
-            expect(request.headers).to.have.property('referer', 'https://www.instagram.com/')
-        })*/
   });
   it("The Disqus iframe should load successfully", () => {
     const testComment = "Checking the ability to write comments";
