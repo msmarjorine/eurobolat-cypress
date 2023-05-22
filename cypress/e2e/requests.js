@@ -7,7 +7,7 @@ describe("Verify http requests", () => {
       url: "/",
     }).then((response) => {
       expect(response.status).to.eql(200);
-      expect(response.headers).to.have.property("server", "awex");
+      expect(response.headers).to.have.property("server", "LiteSpeed");
       expect(response.duration).to.be.lt(1000);
     });
   });
