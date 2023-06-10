@@ -78,7 +78,11 @@ Cypress.Commands.add("verifyCountries", () => {
   cy.get("#countries > li > a").as("countryLinks");
   cy.get("@countryLinks").its("length").should("eq", 12);
   cy.get("@countryLinks").each((el) => {
-    expect(el.attr("href")).to.contain("instagram.com");
+    if (el.text().includes("Германия")) {
+      expect(el.attr("href")).to.eq("/drezden.html");
+    } else {
+      expect(el.attr("href")).to.contain("instagram.com");
+    }
   });
 });
 Cypress.Commands.add("verifyNews", () => {
